@@ -1,0 +1,86 @@
+<openerp>
+    <data>
+       <record model="ir.ui.view" id="productionrecord_tree_view">
+            <field name="name">yanguanjilu.tree</field>
+            <field name="model">glassshop.yanguanjilu</field>
+            <field name="arch" type="xml">
+                <tree string="productionrecord"> 
+                    <field name="customer" string="客户"/>
+                    <field name="date" string="验光日期"/>
+                    <field name="saleorder" string="销售订单"/>
+                    <field name="yongTu" string="用途"/>
+                    <field name="peiJingLeiXing" string="配镜类型"/>
+                    <field name="yanGuangShi" string="验光师"/>
+                    <field name="peiJingShi" string="配镜师"/> 
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="productionrecord_form_view">
+            <field name="name">yanguanjilu.form</field>
+            <field name="model">glassshop.yanguanjilu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header/>
+                    <sheet>
+                        <group col="6">                                      
+                            <h1><field name="customer" string="客户"/></h1>                                
+                            <h1><field name="saleorder" class="oe_inline"  string="销售订单"/></h1>                        
+                            <newline/>  
+
+                            <separator  colspan="6" string="常规"/> 
+                            <newline/>  
+
+                            <field name="yongTu" string="用途"/>
+                            <field name="date" string="验光日期"/>     
+                            <field name="yanGuangShi" string="验光师"/>                            
+                            <newline/>  
+                             
+                            <field name="peiJingLeiXing" string="配镜类型"/>   
+                            <field name="peiJingShi" string="配镜师"/>
+                            <newline/>  
+
+                            <separator  colspan="6"  string="左眼"/>
+                            <newline/>  
+                            <field name="leftQiuJin" string="球镜"/>                                   
+                            <field name="leftZhuJin" string="柱镜"/> 
+                            <field name="leftZhouWei" string="轴位"/>
+                            <!-- <field name="leftTongJu" string="瞳距"/> -->
+                            <field name="leftTongGao" string="瞳高"/>
+                            <field name="leftXiaJiaGuang" string="下加光"/>
+                            <field name="leftJiaoZhengShiLi" string="矫正视力"/>
+
+                            <separator  colspan="6"  string="右眼"/>
+                            <newline/>  
+                            <field name="rightQiuJin" string="球镜"/>                                   
+                            <field name="rightZhuJin" string="柱镜"/>                             
+                            <field name="rightZhouWei" string="轴位"/>
+                            <!-- <field name="rightTongJu" string="瞳距"/> -->
+                            <field name="rightTongGao" string="瞳高"/>
+                            <field name="rightXiaJiaGuang" string="下加光"/>
+                            <field name="rightJiaoZhengShiLi" string="矫正视力"/>
+                            <newline/>  
+                            <separator  colspan="6" string="其他"/> 
+                            <field name="zhongTongJu" string="总瞳距"/>                            
+                            
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+ 
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="base.yanguanjilu_list_action">
+            <field name="name">验光记录</field>
+            <field name="res_model">glassshop.yanguanjilu</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+ 
+        <menuitem id="base.yanguanjilu_list_menu" name="验光记录" parent="base.menu_sales"
+                  action="base.yanguanjilu_list_action"/>  
+         
+    </data>
+</openerp>

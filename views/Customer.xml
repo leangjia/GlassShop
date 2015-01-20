@@ -1,0 +1,23 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="base.view_partner_form_glassshop">
+			<field name="name">HAHA</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="/form/sheet/notebook/page[position()=1]" position="before">
+					<page string="验光记录">
+						<field name = "yanguanjilu">
+							<tree>
+                                <field name="date" string="验光日期"/>
+                                <field name="saleorder" string="销售订单"/>
+                                <field name="yongTu" string="用途"/>
+                                <field name="peiJingLeiXing" string="配镜类型"/>
+							</tree>
+						</field>	
+					</page>				 
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>
